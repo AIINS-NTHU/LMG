@@ -1,4 +1,4 @@
-# Layered Mesh-Gaussian
+# Layered Mesh–Gaussian project page
 
 This is the repository that contains source code for the [LMG project page](https://aiins-nthu.github.io/LMG).
 

@@ -4,12 +4,13 @@
     <meta charset="utf-8" />
     <meta
       name="description"
-      content="Layered Mesh-Gaussian (LMG) is a research implementation for mesh-driven Gaussian Splatting and hybrid 3D representation rendering."
+      content="Layered Mesh–Gaussian (LMG) is a research implementation for mesh-driven Gaussian Splatting and hybrid 3D representation rendering."
     />
     <meta
       name="keywords"
-      content="LMG, Layered Mesh-Gaussian, Gaussian Splatting, MMSys'26"
+      content="LMG, Layered Mesh–Gaussian, Gaussian Splatting, volumetric video streaming, MMSys'26"
     />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>LMG: Efficient Streaming of Layered Mesh–Gaussian 3D Scenes</title>
 
@@ -86,8 +87,7 @@
           <div class="columns is-centered">
             <div class="column has-text-centered">
               <h1 class="title is-1 publication-title">
-                Layered Mesh–Gaussian: Efficient Streaming of Layered
-                Mesh–Gaussian 3D
+                LMG: Efficient Streaming of Layered Mesh–Gaussian 3D Scenes
               </h1>
               <div class="is-size-5 publication-authors">
                 <span class="author-block">
@@ -166,12 +166,31 @@
     <section class="hero teaser">
       <div class="container is-max-desktop">
         <div class="hero-body">
-          <video id="teaser" autoplay muted loop playsinline height="30%">
-            <source src="./static/videos/hotdog_fly.mp4" type="video/mp4" />
-          </video>
+          <div class="columns is-centered has-text-centered">
+            <div class="column">
+              <video id="teaser-1" autoplay muted loop playsinline width="100%">
+                <source src="./static/videos/hotdog_fly.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="column">
+              <video id="teaser-2" autoplay muted loop playsinline width="100%">
+                <source
+                  src="./static/videos/hotdog_flap.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+            <div class="column">
+              <video id="teaser-3" autoplay muted loop playsinline width="100%">
+                <source
+                  src="./static/videos/hotdog_scale.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+          </div>
           <h2 class="subtitle has-text-centered">
-            Layered Mesh-Gaussian (LMG): Efficient Streaming of Layered
-            Mesh–Gaussian 3D Scenes
+            LMG uses mesh deformations to guide Gaussians for animations
           </h2>
         </div>
       </div>
@@ -299,40 +318,50 @@
       </div>
     </section> -->
 
-    <section class="section">
+    <section class="section abs">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
             <h2 class="title is-3">Abstract</h2>
             <div class="content has-text-justified">
               <p>
-                High-quality interactive 3D experiences for XR require streaming
-                large scenes under constrained and fluctuating network
-                conditions. Existing mesh or 3D Gaussian splatting (3DGS)
-                approaches each exhibit trade-offs among visual fidelity, model
-                size, and start-up latency, while prior hybrid mesh–Gaussian
-                methods largely focus on reconstruction quality rather than
-                end-to-end delivery. In this work, we introduce LMG, a Layered
-                Mesh–Gaussian streaming system designed for efficient delivery
-                of large static 3D scenes. LMG represents each scene using a
-                textured mesh as a streamable base layer and attaches
-                surface-aligned Gaussians as an enhancement layer, with a
-                training pipeline that leverages mesh geometry and texture cues
-                to optimize compact, detail-preserving Gaussians. Built on this
-                representation, LMG employs a DASH-based streaming pipeline that
-                first delivers the mesh to provide an immediate, coherent scene
-                overview, and then incrementally refines only the visible
-                regions with Gaussian tiles according to the user’s viewport and
-                available bandwidth. A joint bandwidth scheduler allocates
-                bitrate across mesh and Gaussian layers to minimize start-up
-                latency while maximizing perceptual quality. Experiments show
-                that our layered representation achieves higher visual quality
-                than mesh-only baselines at comparable storage or bitrate and
-                produces more compact models than 3DGS-only scenes. End-to-end
-                evaluations further demonstrate that LMG reduces start-up delay
-                and rebuffering while improving viewport quality over monolithic
-                3DGS streaming and mesh-only streaming, making it a practical
-                solution for scalable 3D scene delivery in XR.
+                Delivering immersive 6-DoF experiences over capacity-constrained
+                networks requires balancing visual fidelity, interactive
+                capabilities, and streaming efficiency. Existing polygonal mesh
+                or 3D Gaussian Splatting (3DGS) approaches exhibit fundamental
+                trade-offs among these requirements, whereas prior hybrid
+                methods have largely focused on reconstruction quality rather
+                than end-to-end delivery.
+                <br />
+                <br />
+                In this work, we introduce <strong>LMG</strong>, the first
+                end-to-end streaming system utilizing a Layered Mesh-Gaussian
+                representation for the efficient and interactive delivery of
+                static 3D scenes. Our model organizes textured meshes into a
+                streamable base layer to ensure structural interactivity and
+                attaches surface-aligned Gaussians into an enhancement layer for
+                high-fidelity, photorealistic rendering. To enable effective
+                deployment, we develop a complete system comprising a production
+                server, a streaming server, and an XR client. The production
+                server features a joint training pipeline with a custom hybrid
+                rasterizer and budget-aware allocation algorithms that
+                concentrate Gaussians in perceptually important regions. The
+                streaming server employs a layered and tile-based pipeline
+                tailored for LMG, prioritizing the delivery of the base layer
+                for a quick scene overview, followed by the progressive
+                refinement of visible regions using Gaussians.
+                <br />
+                <br />
+                Evaluations of our systems demonstrate that the LMG production
+                server significantly outperforms the state-of-the-art baseline
+                in visual quality--improving PSNR by up to 10.99 dB (8.89 dB on
+                average) and SSIM by up to 0.293 (0.255 on average).
+                Furthermore, our results highlight the efficacy of the LMG
+                streaming system, showing that layered and tiled streaming
+                yields quality improvements of up to 19.81 dB in PSNR (5.80 dB
+                on average), 0.143 in SSIM (0.06 on average), and 40.86 in VMAF
+                (16.06 on average), while enabling low-latency and interactive
+                XR experiences.
               </p>
             </div>
           </div>
@@ -352,11 +381,124 @@
             </div>
           </div>
         </div> -->
+      </div>
+    </section>
 
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
+    <section class="section img">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Gallery</h2>
+
+        <div class="columns is-centered">
+          <div class="column">
+            <div class="content">
+              <h3 class="title is-4">Visual Effects</h3>
+              <p>
+                Using <i>nerfies</i> you can create fun visual effects. This
+                Dolly zoom effect would be impossible without nerfies since it
+                would require going through a wall.
+              </p>
+              <video
+                id="dollyzoom"
+                autoplay
+                controls
+                muted
+                loop
+                playsinline
+                height="100%"
+              >
+                <source
+                  src="./static/videos/dollyzoom-stacked.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+          </div>
+
+          <div class="column">
+            <h3 class="title is-4">Matting</h3>
+            <div class="columns is-centered">
+              <div class="column content">
+                <p>
+                  As a byproduct of our method, we can also solve the matting
+                  problem by ignoring samples that fall outside of a bounding
+                  box during rendering.
+                </p>
+                <video id="matting-video" controls playsinline height="100%">
+                  <source src="./static/videos/matting.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: none" class="columns is-centered">
+          <div class="column is-full-width">
             <h2 class="title is-3">Gallery</h2>
-            <div class="publication-video"></div>
+
+            <!-- Interpolating. -->
+            <h3 class="title is-4">Interpolating states</h3>
+            <div class="content has-text-justified">
+              <p>
+                We can also animate the scene by interpolating the deformation
+                latent codes of two input frames. Use the slider here to
+                linearly interpolate between the left frame and the right frame.
+              </p>
+            </div>
+            <div class="columns is-vcentered interpolation-panel">
+              <div class="column is-3 has-text-centered">
+                <img
+                  src="./static/images/interpolate_start.jpg"
+                  class="interpolation-image"
+                  alt="Interpolate start reference image."
+                />
+                <p>Start Frame</p>
+              </div>
+              <div class="column interpolation-video-column">
+                <div id="interpolation-image-wrapper">Loading...</div>
+                <input
+                  class="slider is-fullwidth is-large is-info"
+                  id="interpolation-slider"
+                  step="1"
+                  min="0"
+                  max="100"
+                  value="0"
+                  type="range"
+                />
+              </div>
+              <div class="column is-3 has-text-centered">
+                <img
+                  src="./static/images/interpolate_end.jpg"
+                  class="interpolation-image"
+                  alt="Interpolation end reference image."
+                />
+                <p class="is-bold">End Frame</p>
+              </div>
+            </div>
+            <br />
+            <!--/ Interpolating. -->
+
+            <!-- Re-rendering. -->
+            <h3 class="title is-4">Re-rendering the input video</h3>
+            <div class="content has-text-justified">
+              <p>
+                Using <span class="dnerf">Nerfies</span>, you can re-render a
+                video from a novel viewpoint such as a stabilized camera by
+                playing back the training deformations.
+              </p>
+            </div>
+            <div class="content has-text-centered">
+              <video
+                id="replay-video"
+                controls
+                muted
+                preload
+                playsinline
+                width="75%"
+              >
+                <source src="./static/videos/replay.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <!--/ Re-rendering. -->
           </div>
         </div>
       </div>
