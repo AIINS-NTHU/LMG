@@ -283,50 +283,61 @@
       </div>
     </section> -->
 
-    <!-- <section class="section">
+    <section class="section">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
-            <h2 class="title is-3">Introduction</h2>
+            <h2 class="title is-3">Abstract</h2>
             <div class="content has-text-justified">
               <p>
-                Layered Mesh-Gaussian (LMG) is a research implementation built
-                upon the official
-                <a href="https://arxiv.org/abs/2402.01459"
-                  >"GaMeS: Mesh-Based Adapting and Modification of Gaussian
-                  Splatting"</a
-                >.
-              </p>
-              <p>
-                This project extends the original
-                <a href="https://waczjoan.github.io/gaussian-mesh-splatting/"
-                  >official codebase</a
-                >
-                with additional utilities and experimental workflows for
-                mesh-driven Gaussian Splatting and hybrid 3D representation
-                rendering.
+                High-quality interactive 3D experiences for XR require streaming
+                large scenes under constrained and fluctuating network
+                conditions. Existing mesh or 3D Gaussian splatting (3DGS)
+                approaches each exhibit trade-offs among visual fidelity, model
+                size, and start-up latency, while prior hybrid mesh–Gaussian
+                methods largely focus on reconstruction quality rather than
+                end-to-end delivery. In this work, we introduce LMG, a Layered
+                Mesh–Gaussian streaming system designed for efficient delivery
+                of large static 3D scenes. LMG represents each scene using a
+                textured mesh as a streamable base layer and attaches
+                surface-aligned Gaussians as an enhancement layer, with a
+                training pipeline that leverages mesh geometry and texture cues
+                to optimize compact, detail-preserving Gaussians. Built on this
+                representation, LMG employs a DASH-based streaming pipeline that
+                first delivers the mesh to provide an immediate, coherent scene
+                overview, and then incrementally refines only the visible
+                regions with Gaussian tiles according to the user’s viewport and
+                available bandwidth. A joint bandwidth scheduler allocates
+                bitrate across mesh and Gaussian layers to minimize start-up
+                latency while maximizing perceptual quality. Experiments show
+                that our layered representation achieves higher visual quality
+                than mesh-only baselines at comparable storage or bitrate and
+                produces more compact models than 3DGS-only scenes. End-to-end
+                evaluations further demonstrate that LMG reduces start-up delay
+                and rebuffering while improving viewport quality over monolithic
+                3DGS streaming and mesh-only streaming, making it a practical
+                solution for scalable 3D scene delivery in XR.
               </p>
             </div>
           </div>
         </div>
-        
 
-        
-        <div class="columns is-centered has-text-centered">
+        <!-- paper presentation video, if any -->
+        <!-- <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
             <h2 class="title is-3">Video</h2>
             <div class="publication-video">
               <iframe
-                src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                src="https://www.youtube.com/embed/"
                 frameborder="0"
                 allow="autoplay; encrypted-media"
                 allowfullscreen
               ></iframe>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
-    </section> -->
+    </section>
 
     <section class="section" id="BibTeX">
       <div class="container is-max-desktop content">
