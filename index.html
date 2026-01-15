@@ -381,124 +381,155 @@
             </div>
           </div>
         </div> -->
+
+        <!-- <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">More Headings</h2>
+            <div class="publication-video">
+              <img src="" alt="" />
+            </div>
+          </div>
+        </div> -->
       </div>
     </section>
 
     <section class="section img">
       <div class="container is-max-desktop">
-        <h2 class="title is-3">Gallery</h2>
-
+        <!-- Row 1: 3 columns width (full) with 1 image, 1 title -->
+        <h2 class="title is-3 has-text-centered">Overview</h2>
         <div class="columns is-centered">
-          <div class="column">
-            <div class="content">
-              <h3 class="title is-4">Visual Effects</h3>
-              <p>
-                Using <i>nerfies</i> you can create fun visual effects. This
-                Dolly zoom effect would be impossible without nerfies since it
-                would require going through a wall.
-              </p>
-              <video
-                id="dollyzoom"
-                autoplay
-                controls
-                muted
-                loop
-                playsinline
-                height="100%"
+          <div class="column is-full">
+            <!-- <figure class="image">
+              <img
+                src="./static/images/scenarios_v5.png"
+                alt="Main Visualization"
+              />
+              <figcaption
+                class="has-text-centered"
+                style="margin-top: 0.5rem; font-size: 0.9rem; color: #444"
               >
-                <source
-                  src="./static/videos/dollyzoom-stacked.mp4"
-                  type="video/mp4"
-                />
-              </video>
-            </div>
-          </div>
+                
+              </figcaption>
+            </figure> -->
 
-          <div class="column">
-            <h3 class="title is-4">Matting</h3>
-            <div class="columns is-centered">
-              <div class="column content">
-                <p>
-                  As a byproduct of our method, we can also solve the matting
-                  problem by ignoring samples that fall outside of a bounding
-                  box during rendering.
-                </p>
-                <video id="matting-video" controls playsinline height="100%">
-                  <source src="./static/videos/matting.mp4" type="video/mp4" />
-                </video>
-              </div>
-            </div>
+            <!-- TODO: fix svg issue -->
+            <figure class="image">
+              <img
+                src="./static/images/scenarios_v5.svg"
+                alt="Main Visualization"
+              />
+              <figcaption
+                class="has-text-centered"
+                style="margin-top: 0.5rem; font-size: 0.9rem; color: #444"
+              >
+                High-level workflow of an on-demand LMG streaming system, where
+                tiles are requested based on user trajectory to support
+                interactive XR experiences.
+              </figcaption>
+            </figure>
           </div>
         </div>
 
-        <div style="display: none" class="columns is-centered">
-          <div class="column is-full-width">
-            <h2 class="title is-3">Gallery</h2>
+        <!-- Spacer -->
+        <br />
 
-            <!-- Interpolating. -->
-            <h3 class="title is-4">Interpolating states</h3>
-            <div class="content has-text-justified">
-              <p>
-                We can also animate the scene by interpolating the deformation
-                latent codes of two input frames. Use the slider here to
-                linearly interpolate between the left frame and the right frame.
-              </p>
-            </div>
-            <div class="columns is-vcentered interpolation-panel">
-              <div class="column is-3 has-text-centered">
-                <img
-                  src="./static/images/interpolate_start.jpg"
-                  class="interpolation-image"
-                  alt="Interpolate start reference image."
-                />
-                <p>Start Frame</p>
-              </div>
-              <div class="column interpolation-video-column">
-                <div id="interpolation-image-wrapper">Loading...</div>
-                <input
-                  class="slider is-fullwidth is-large is-info"
-                  id="interpolation-slider"
-                  step="1"
-                  min="0"
-                  max="100"
-                  value="0"
-                  type="range"
-                />
-              </div>
-              <div class="column is-3 has-text-centered">
-                <img
-                  src="./static/images/interpolate_end.jpg"
-                  class="interpolation-image"
-                  alt="Interpolation end reference image."
-                />
-                <p class="is-bold">End Frame</p>
-              </div>
-            </div>
-            <br />
-            <!--/ Interpolating. -->
-
-            <!-- Re-rendering. -->
-            <h3 class="title is-4">Re-rendering the input video</h3>
-            <div class="content has-text-justified">
-              <p>
-                Using <span class="dnerf">Nerfies</span>, you can re-render a
-                video from a novel viewpoint such as a stabilized camera by
-                playing back the training deformations.
-              </p>
-            </div>
-            <div class="content has-text-centered">
-              <video
-                id="replay-video"
-                controls
-                muted
-                preload
-                playsinline
-                width="75%"
+        <!-- Row 2: Split 1/3 and 2/3, 2 titles -->
+        <div class="columns is-full-width">
+          <div class="column is-one-third">
+            <h2 class="title is-3">Detail View</h2>
+            <figure class="image">
+              <img src="./static/images/lmg_detail.svg" alt="Detail View" />
+              <figcaption
+                class="has-text-centered"
+                style="margin-top: 0.5rem; font-size: 0.9rem; color: #444"
               >
-                <source src="./static/videos/replay.mp4" type="video/mp4" />
-              </video>
+                LMG layers textured mesh and 3D Gaussians to- gether
+              </figcaption>
+            </figure>
+          </div>
+          <div class="column is-two-thirds">
+            <h2 class="title is-3">Comparison</h2>
+            <div style="display: flex; gap: 1rem; align-items: stretch">
+              <figure class="image" style="flex: 1; margin: 0">
+                <img
+                  src="./static/images/lego_games_40k_00060.png"
+                  alt="Comparison 1"
+                  style="width: 100%; height: 100%; object-fit: cover"
+                />
+              </figure>
+              <figure class="image" style="flex: 1; margin: 0">
+                <img
+                  src="./static/images/lego_uniform_40k_00060.png"
+                  alt="Comparison 2"
+                  style="width: 100%; height: 100%; object-fit: cover"
+                />
+              </figure>
             </div>
-            <!--/ Re-rendering. -->
+            <figcaption
+              class="has-text-centered"
+              style="margin-top: 0.5rem; font-size: 0.9rem; color: #444"
+            >
+              Sample results from Lego trained with different rasterizers under
+              40k budget: (left) GaMeS and (right) our LMG’s DTGS.
+            </figcaption>
+          </div>
+        </div>
+
+        <!-- Spacer -->
+        <br />
+
+        <!-- Row 3: 4 images in a row (is-3 creates 4 cols in 12-grid), 1 title -->
+        <h2 class="title is-3 has-text-centered">Comparative Results</h2>
+        <div class="columns is-centered is-multiline">
+          <div class="column is-3">
+            <figure class="image">
+              <img src="./static/images/12900_gt.png" alt="Result 1" />
+              <figcaption
+                class="has-text-centered"
+                style="margin-top: 0.5rem; font-size: 0.85rem; color: #444"
+              >
+                Ground Truth
+              </figcaption>
+            </figure>
+          </div>
+          <div class="column is-3">
+            <figure class="image">
+              <img src="./static/images/12900_mesh.png" alt="Result 2" />
+              <figcaption
+                class="has-text-centered"
+                style="margin-top: 0.5rem; font-size: 0.85rem; color: #444"
+              >
+                Mesh only
+              </figcaption>
+            </figure>
+          </div>
+          <div class="column is-3">
+            <figure class="image">
+              <img
+                src="./static/images/area_12900_gs_pure_with_depth.png"
+                alt="Result 3"
+              />
+              <figcaption
+                class="has-text-centered"
+                style="margin-top: 0.5rem; font-size: 0.85rem; color: #444"
+              >
+                GS only, allocated by area
+              </figcaption>
+            </figure>
+          </div>
+          <div class="column is-3">
+            <figure class="image">
+              <img
+                src="./static/images/distortion_12900_gs_pure_wo_depth.png"
+                alt="Result 4"
+              />
+              <figcaption
+                class="has-text-centered"
+                style="margin-top: 0.5rem; font-size: 0.85rem; color: #444"
+              >
+                GS only, allocated by distortion
+              </figcaption>
+            </figure>
           </div>
         </div>
       </div>
