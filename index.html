@@ -436,7 +436,7 @@
         <!-- Row 2: Split 1/3 and 2/3, 2 titles -->
         <div class="columns is-full-width">
           <div class="column is-one-third">
-            <h2 class="title is-3">Detail View</h2>
+            <h2 class="title is-3">LMG Model</h2>
             <figure class="image">
               <img src="./static/images/lmg_detail.svg" alt="Detail View" />
               <figcaption
@@ -449,29 +449,41 @@
           </div>
           <div class="column is-two-thirds">
             <h2 class="title is-3">Comparison</h2>
-            <div style="display: flex; gap: 1rem; align-items: stretch">
+            <div style="display: flex; gap: 1rem; align-items: start">
               <figure class="image" style="flex: 1; margin: 0">
                 <img
                   src="./static/images/lego_games_40k_00060.png"
                   alt="Comparison 1"
-                  style="width: 100%; height: 100%; object-fit: cover"
+                  style="width: 100%; height: auto"
                 />
+                <figcaption
+                  class="has-text-centered"
+                  style="margin-top: 0.5rem; font-size: 0.85rem; color: #444"
+                >
+                  (a)
+                </figcaption>
               </figure>
               <figure class="image" style="flex: 1; margin: 0">
                 <img
                   src="./static/images/lego_uniform_40k_00060.png"
                   alt="Comparison 2"
-                  style="width: 100%; height: 100%; object-fit: cover"
+                  style="width: 100%; height: auto"
                 />
+                <figcaption
+                  class="has-text-centered"
+                  style="margin-top: 0.5rem; font-size: 0.85rem; color: #444"
+                >
+                  (b)
+                </figcaption>
               </figure>
             </div>
-            <figcaption
+            <p
               class="has-text-centered"
               style="margin-top: 0.5rem; font-size: 0.9rem; color: #444"
             >
-              Sample results from Lego trained with different rasterizers under
-              40k budget: (left) GaMeS and (right) our LMG’s DTGS.
-            </figcaption>
+              Sample results from <em>Lego</em> trained with different
+              rasterizers under 40k budget: (a) GaMeS and (b) our LMG’s DTGS.
+            </p>
           </div>
         </div>
 
@@ -479,7 +491,7 @@
         <br />
 
         <!-- Row 3: 4 images in a row (is-3 creates 4 cols in 12-grid), 1 title -->
-        <h2 class="title is-3 has-text-centered">Comparative Results</h2>
+        <h2 class="title is-3 has-text-centered">Allocation Policy Results</h2>
         <div class="columns is-centered is-multiline">
           <div class="column is-3">
             <figure class="image">
@@ -488,7 +500,7 @@
                 class="has-text-centered"
                 style="margin-top: 0.5rem; font-size: 0.85rem; color: #444"
               >
-                Ground Truth
+                (a)
               </figcaption>
             </figure>
           </div>
@@ -499,7 +511,7 @@
                 class="has-text-centered"
                 style="margin-top: 0.5rem; font-size: 0.85rem; color: #444"
               >
-                Mesh only
+                (b)
               </figcaption>
             </figure>
           </div>
@@ -513,7 +525,7 @@
                 class="has-text-centered"
                 style="margin-top: 0.5rem; font-size: 0.85rem; color: #444"
               >
-                GS only, allocated by area
+                (c)
               </figcaption>
             </figure>
           </div>
@@ -527,10 +539,70 @@
                 class="has-text-centered"
                 style="margin-top: 0.5rem; font-size: 0.85rem; color: #444"
               >
-                GS only, allocated by distortion
+                (d)
               </figcaption>
             </figure>
           </div>
+        </div>
+        <div class="has-text-centered">
+          <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #444">
+            Sample results from <em>Bicycle</em>: (a) ground truth image, (b)
+            textured mesh, (c) Gaussian allocated by area, and (d) Gaussian
+            allocated by distortion.
+          </p>
+        </div>
+
+        <!-- Row 4, 1 title -->
+        <h2 class="title is-3 has-text-centered">Simulated Streaming Traces</h2>
+        <div class="columns is-centered is-multiline">
+          <div class="column is-3">
+            <figure class="image">
+              <img
+                src="./static/images/area_12900_gs_pure_with_depth.png"
+                alt="Result 3"
+              />
+              <figcaption
+                class="has-text-centered"
+                style="margin-top: 0.5rem; font-size: 0.85rem; color: #444"
+              >
+                (a)
+              </figcaption>
+            </figure>
+          </div>
+          <div class="column is-3">
+            <figure class="image">
+              <img
+                src="./static/images/area_12900_gs_pure_with_depth.png"
+                alt="Result 3"
+              />
+              <figcaption
+                class="has-text-centered"
+                style="margin-top: 0.5rem; font-size: 0.85rem; color: #444"
+              >
+                (b)
+              </figcaption>
+            </figure>
+          </div>
+          <div class="column is-3">
+            <figure class="image">
+              <img
+                src="./static/images/area_12900_gs_pure_with_depth.png"
+                alt="Result 3"
+              />
+              <figcaption
+                class="has-text-centered"
+                style="margin-top: 0.5rem; font-size: 0.85rem; color: #444"
+              >
+                (c)
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="has-text-centered">
+          <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #444">
+            Sample streaming results from <em>Bicycle</em>: (a)(b)(c)
+            placeholders
+          </p>
         </div>
       </div>
     </section>
@@ -547,6 +619,33 @@
   author={Sun, Yuan-Chun and Chen, Guodong and Kondori, Sam Ziaie and Dasari, Mallesham and Hsu, Cheng-Hsin},
   booktitle={Proceedings of the 17th ACM Multimedia Systems Conference},
   year={2026}
+}</code></pre>
+
+        <h2 class="title">Acknowledgements</h2>
+        <p>
+          Our codebase is built upon the excellent work from
+          <strong>GaMeS</strong> and <strong>3D Gaussian Splatting</strong>. We
+          thank the authors for open-sourcing their codebases which served as
+          the foundation for our implementation.
+        </p>
+        <pre><code>@Article{waczynska2024games,
+  author         = {Joanna Waczyńska and Piotr Borycki and Sławomir Tadeja and Jacek Tabor and Przemysław Spurek},
+  title          = {GaMeS: Mesh-Based Adapting and Modification of Gaussian Splatting},
+  year           = {2024},
+  eprint         = {2402.01459},
+  archivePrefix  = {arXiv},
+  primaryClass   = {cs.CV},
+}</code></pre>
+
+        <pre><code>@Article{kerbl3Dgaussians,
+  author         = {Kerbl, Bernhard and Kopanas, Georgios and Leimk{\"u}hler, Thomas and Drettakis, George},
+  title          = {3D Gaussian Splatting for Real-Time Radiance Field Rendering},
+  journal        = {ACM Transactions on Graphics},
+  number         = {4},
+  volume         = {42},
+  month          = {July},
+  year           = {2023},
+  url            = {https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/}
 }</code></pre>
       </div>
     </section>
