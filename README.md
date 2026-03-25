@@ -2,6 +2,8 @@
 
 This is the repository that contains source code for the [LMG project page](https://aiins-nthu.github.io/LMG).
 
+Please find the source code for the implementation of LMG in [LMG Code repo](https://github.com/SYJINTW/layered-mesh-gaussian).
+
 If you find our work helpful in your research, welcome to cite these papers and give a ⭐.
 
 ```
