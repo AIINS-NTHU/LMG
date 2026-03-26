@@ -427,7 +427,7 @@
             <!-- TODO: fix svg issue -->
             <figure class="image">
               <img
-                src="./static/images/scenarios_v5.svg"
+                src="./static/images/scenarios.png"
                 alt="Main Visualization"
               />
               <figcaption
@@ -568,15 +568,20 @@
         <h2 class="title is-3 has-text-centered">Simulated Streaming Traces</h2>
         <div class="columns is-centered">
           <div class="column">
-            <div class="publication-video">
-              <iframe
-                src="https://www.youtube.com/embed/qKylBP-cMqI"
-                title="LMG - Sample Streaming Results"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
+            <div style="width: 100%; border-radius: 10px; overflow: hidden">
+              <video
+                controls
+                autoplay
+                muted
+                loop
+                playsinline
+                style="width: 100%; display: block"
+              >
+                <source
+                  src="./static/videos/streaming_results.mp4"
+                  type="video/mp4"
+                />
+              </video>
             </div>
           </div>
         </div>
@@ -584,7 +589,7 @@
           <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #444">
             Simulated streaming results from <em>Bicycle</em> under a
             high-bandwidth network with significant variance (left to right):
-            (a) Ours, (b) No Tiling, (c) No Layer.
+            (a) Ours, (b) No Layer, (c) No Tiling.
           </p>
         </div>
       </div>
